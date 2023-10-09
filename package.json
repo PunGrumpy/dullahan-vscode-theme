@@ -13,6 +13,14 @@
   "categories": [
     "Themes"
   ],
+  "keywords": [
+    "theme",
+    "dark theme",
+    "light theme",
+    "dullahan",
+    "dark dullahan",
+    "white dullahan"
+  ],
   "contributes": {
     "themes": [
       {
