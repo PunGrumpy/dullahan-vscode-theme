@@ -1,0 +1,26 @@
+{
+  "name": "dark-dullahan",
+  "displayName": "Dullahan",
+  "description": "A dark Dullahan theme for VS Code",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.83.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Dark Dullahan",
+        "uiTheme": "vs-dark",
+        "path": "./themes/dark-dullahan.json"
+      },
+      {
+        "label": "White Dullahan",
+        "uiTheme": "vs",
+        "path": "./themes/white-dullahan.json"
+      }
+    ]
+  }
+}
