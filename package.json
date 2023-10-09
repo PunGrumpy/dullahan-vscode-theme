@@ -1,8 +1,12 @@
 {
-  "name": "dark-dullahan",
+  "name": "dullahan-vscode-theme",
   "displayName": "Dullahan",
-  "description": "A dark Dullahan theme for VS Code",
+  "description": "A Dullahan theme for VS Code",
   "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "package": "vsce package"
+  },
   "engines": {
     "vscode": "^1.83.0"
   },
@@ -22,5 +26,13 @@
         "path": "./themes/white-dullahan.json"
       }
     ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PunGrumpy/dullahan-vscode-theme"
+  },
+  "devDependencies": {
+    "ovsx": "^0.8.3",
+    "vsce": "^2.15.0"
   }
 }
