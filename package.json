@@ -16,6 +16,11 @@
         "path": "./themes/dark-dullahan.json"
       },
       {
+        "label": "Golden Dullahan",
+        "uiTheme": "vs-dark",
+        "path": "./themes/golden-dullahan.json"
+      },
+      {
         "label": "White Dullahan",
         "uiTheme": "vs",
         "path": "./themes/white-dullahan.json"
