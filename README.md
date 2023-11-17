@@ -1,18 +1,22 @@
 <div align="center">
     <h1><code>🐴</code> Dullahan</h1>
     <p style="font-style: italic;">A Dullahan theme for VS Code</p>
-    <img src="./assets/dullahan.gif" alt="Dullahan theme for VS Code" width="512px" />
+    <img src="./assets/dullahan.gif" alt="Dullahan theme for VS Code" width="256px" />
 </div>
 
 ## `📸` Screenshots
 
 ### `🌙` Dark
 
-![Dullahan theme for VS Code](./assets/dark-dullahan.png)
+![Dullahan theme for VS Code](./assets/preview/dark-dullahan.png)
 
-### `🌞` Light
+### `🌞` White
 
-![Dullahan theme for VS Code](./assets/white-dullahan.png)
+![Dullahan theme for VS Code](./assets/preview/white-dullahan.png)
+
+### `🪙` Golden
+
+![Dullahan theme for VS Code](./assets/preview/golden-dullahan.png)
 
 ## `📦` Installation
 
@@ -26,3 +30,7 @@
 ## `⚖️` License
 
 Released under the [MIT License](LICENSE)
+
+## `🙏` Contributing
+
+If you're interested in contributing to this project, feel free to open an issue or pull request! All contributions are welcome.
