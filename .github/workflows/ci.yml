@@ -1,0 +1,41 @@
+name: 🤡 Continuous Integration
+on:
+  push:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+jobs:
+  check:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+        node-version: [21.x]
+    env:
+      SCOPRE_OWNER: '@pungrumpy'
+    runs-on: ${{ matrix.os }}
+    name: 🧪
+    steps:
+      - name: 🔔 Checkout
+        uses: actions/checkout@v4
+      - name: 🍞 Setup Bun
+        uses: oven-sh/setup-bun@v1
+      - name: 🌵 Cache bun
+        uses: actions/cache@v3
+        id: cache-bun
+        with:
+          path: ~/.bun
+          key: ${{ runner.os }}-bun-${{ hashFiles('**/bun.lockb') }}
+          restore-keys: |
+            ${{ runner.os }}-bun-
+      - name: 🏗️ Build
+        run: |
+          bun add -g @vscode/vsce
+          vsce package --no-yarn
+      - name: 🎅 Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: dullahan-latest
+          path: dullahan-*.vsix

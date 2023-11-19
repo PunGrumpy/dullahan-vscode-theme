@@ -1,0 +1,59 @@
+name: 🚚 Continuous Delivery
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+jobs:
+  release:
+    permissions:
+      contents: write
+      pull-requests: write
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+        bun-version: [latest]
+    name: 🚀 Release
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: 💤 Automated Release
+        uses: google-github-actions/release-please-action@v3
+        id: automated_release
+        with:
+          release-type: 'node'
+          token: ${{ secrets.GITHUB_TOKEN }}
+          bump-minor-pre-major: true
+          prerelease: true
+          release-as: 1.2.4
+      - name: 🔔 Checkout
+        uses: actions/checkout@v4
+      - name: 🍞 Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: ${{ matrix.bun-version }}
+      - name: 🔽 Install Dependencies
+        run: bun install
+      - name: 🏷️ Tag Stable Version
+        if: ${{ steps.automated_release.outputs.release_created }}
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email github-actions[bot]@users.noreply.github.com
+          git remote add gh-token "https://${{ secrets.GITHUB_TOKEN }}@github.com/google-github-actions/release-please-action.git"
+          git tag -d stable || true
+          git push origin :stable || true
+          git tag -a stable -m "chore: release stable version ${{ steps.automated_release.outputs.tag_name }}"
+          git push origin stable
+      - name: 🪨 Publish to Open VSX Registry
+        if: ${{ steps.automated_release.outputs.release_created }}
+        uses: HaaLeo/publish-vscode-extension@v1
+        id: publish-open-vsx
+        with:
+          pat: ${{ secrets.OPEN_VSX_TOKEN  }}
+      - name: 💹 Publish to Visual Studio Marketplace
+        if: ${{ steps.automated_release.outputs.release_created }}
+        uses: HaaLeo/publish-vscode-extension@v1
+        with:
+          pat: ${{ secrets.VS_MARKETPLACE_TOKEN  }}
+          registryUrl: https://marketplace.visualstudio.com
+          extensionFile: ${{ steps.publish-open-vsx.outputs.vsixPath }}
