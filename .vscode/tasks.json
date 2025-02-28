@@ -1,0 +1,47 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "npm",
+      "script": "build",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$tsc"],
+      "label": "npm: build",
+      "detail": "Build TypeScript and generate themes"
+    },
+    {
+      "type": "npm",
+      "script": "watch",
+      "group": "build",
+      "problemMatcher": ["$tsc-watch"],
+      "label": "npm: watch",
+      "detail": "Watch TypeScript files and recompile on change",
+      "isBackground": true
+    },
+    {
+      "type": "npm",
+      "script": "build:themes",
+      "group": "build",
+      "problemMatcher": [],
+      "label": "npm: build:themes",
+      "detail": "Generate theme files from compiled TypeScript"
+    },
+    {
+      "type": "npm",
+      "script": "lint",
+      "problemMatcher": ["$eslint-stylish"],
+      "label": "npm: lint",
+      "detail": "Lint TypeScript code"
+    },
+    {
+      "type": "npm",
+      "script": "package",
+      "problemMatcher": [],
+      "label": "npm: package",
+      "detail": "Build and package extension into .vsix file"
+    }
+  ]
+}
