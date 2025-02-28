@@ -4,6 +4,14 @@ All notable changes to the "dark-dullahan" extension will be documented in this 
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [1.3.0](https://github.com/PunGrumpy/dullahan-vscode-theme/compare/v1.2.4...v1.3.0) (2025-02-28)
+
+
+### Features
+
+* **colors:** enhance color definitions for new VS Code UI elements and improve contrast ([155f93b](https://github.com/PunGrumpy/dullahan-vscode-theme/commit/155f93b5e65cfb404cbdd288777334cefbd74312))
+* **theme:** add Dullahan themes and related TypeScript types ([41cd6e9](https://github.com/PunGrumpy/dullahan-vscode-theme/commit/41cd6e92e62aa0bc71c71325791ee59ae444d3cd))
+
 ## 1.2.4 (2023-11-19)
 
 
