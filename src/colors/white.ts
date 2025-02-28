@@ -60,5 +60,76 @@ export const whiteColors: ColorDefinitions = {
   'terminal.ansiMagenta': '#AA0D91',
   'terminal.ansiBrightMagenta': '#AA0D91',
   'terminal.ansiCyan': '#3F6E74',
-  'terminal.ansiBrightCyan': '#3F6E74'
+  'terminal.ansiBrightCyan': '#3F6E74',
+
+  // New VS Code UI elements with enhanced contrast
+
+  // Inline suggestions and hints
+  'editor.inlineSuggest.background': '#e9f1ff',
+  'editor.inlineSuggest.foreground': '#282828',
+  'editorInlayHint.background': '#e9f1ff',
+  'editorInlayHint.foreground': '#3E8087',
+  'editorInlayHint.parameterBackground': '#e9f1ff',
+  'editorInlayHint.parameterForeground': '#057CB0',
+  'editorInlayHint.typeBackground': '#e9f1ff',
+  'editorInlayHint.typeForeground': '#4B21B0',
+
+  // Sticky scroll
+  'editorStickyScroll.background': '#F2F2F2',
+  'editorStickyScrollHover.background': '#e9f1ff',
+
+  // Command center
+  'commandCenter.background': '#ECECEC',
+  'commandCenter.foreground': '#282828',
+  'commandCenter.border': '#D9D7D5',
+  'commandCenter.activeBackground': '#e9f1ff',
+  'commandCenter.activeForeground': '#282828',
+  'commandCenter.inactiveForeground': '#28282880',
+
+  // Status bar item colors
+  'statusBarItem.errorBackground': '#C41A16',
+  'statusBarItem.errorForeground': '#FFFFFF',
+  'statusBarItem.warningBackground': '#643820',
+  'statusBarItem.warningForeground': '#FFFFFF',
+
+  // Testing UI
+  'testing.iconFailed': '#C41A16',
+  'testing.iconPassed': '#007400',
+  'testing.iconErrored': '#C41A16',
+  'testing.iconSkipped': '#666666',
+  'testing.runAction': '#007400',
+
+  // Chat UI for extensions like GitHub Copilot
+  'chat.requestBackground': '#F5F5F5',
+  'chat.requestBorder': '#D9D7D5',
+  'chat.slashCommandBackground': '#e9f1ff',
+  'chat.slashCommandForeground': '#282828',
+
+  // Interactive editor
+  'interactive.activeCodeBorder': '#3C93FD',
+  'interactive.inactiveCodeBorder': '#D9D7D5',
+
+  // Symbol icons
+  'symbolIcon.classForeground': '#4B21B0',
+  'symbolIcon.interfaceForeground': '#4B21B0',
+  'symbolIcon.methodForeground': '#3E8087',
+  'symbolIcon.functionForeground': '#3E8087',
+  'symbolIcon.propertyForeground': '#23575C',
+  'symbolIcon.variableForeground': '#057CB0',
+
+  // Accessibility
+  'toolbar.hoverBackground': '#e9f1ff',
+  'toolbar.activeBackground': '#b3d7ff',
+
+  // Quick input
+  'quickInput.background': '#F5F5F5',
+  'quickInput.foreground': '#282828',
+  'quickInputList.focusBackground': '#b3d7ff',
+  'quickInputList.focusForeground': '#282828',
+
+  // Keybinding label
+  'keybindingLabel.background': '#F5F5F5',
+  'keybindingLabel.foreground': '#282828',
+  'keybindingLabel.border': '#D9D7D5',
+  'keybindingLabel.bottomBorder': '#D9D7D5'
 }
