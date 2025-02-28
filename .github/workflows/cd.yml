@@ -33,6 +33,8 @@ jobs:
           bun-version: ${{ matrix.bun-version }}
       - name: 🔽 Install Dependencies
         run: bun install
+      - name: 🔨 Build project
+        run: bun run build
       - name: 🏷️ Tag Stable Version
         if: ${{ steps.automated_release.outputs.release_created }}
         run: |
@@ -45,13 +47,13 @@ jobs:
           git push origin stable
       - name: 🪨 Publish to Open VSX Registry
         if: ${{ steps.automated_release.outputs.release_created }}
-        uses: HaaLeo/publish-vscode-extension@v1
+        uses: HaaLeo/publish-vscode-extension@v2
         id: publish-open-vsx
         with:
           pat: ${{ secrets.OPEN_VSX_TOKEN  }}
       - name: 💹 Publish to Visual Studio Marketplace
         if: ${{ steps.automated_release.outputs.release_created }}
-        uses: HaaLeo/publish-vscode-extension@v1
+        uses: HaaLeo/publish-vscode-extension@v2
         with:
           pat: ${{ secrets.VS_MARKETPLACE_TOKEN  }}
           registryUrl: https://marketplace.visualstudio.com

@@ -16,26 +16,35 @@ jobs:
     env:
       SCOPRE_OWNER: '@pungrumpy'
     runs-on: ${{ matrix.os }}
-    name: 🧪
+    name: ${{ matrix.os }} - Node.js ${{ matrix.node-version }}
     steps:
       - name: 🔔 Checkout
         uses: actions/checkout@v4
       - name: 🍞 Setup Bun
         uses: oven-sh/setup-bun@v1
       - name: 🌵 Cache bun
-        uses: actions/cache@v3
-        id: cache-bun
+        uses: actions/cache@v4
+        id: cache-bun # use this to check for `cache-hit` ==> if: steps.cache-bun.outputs.cache-hit != 'true'
         with:
           path: ~/.bun
           key: ${{ runner.os }}-bun-${{ hashFiles('**/bun.lockb') }}
           restore-keys: |
             ${{ runner.os }}-bun-
-      - name: 🏗️ Build
+      - name: 📦 Install dependencies
+        if: steps.cache-bun.outputs.cache-hit != 'true'
+        run: bun install
+      - name: 🔍 Lint
+        run: bun run lint
+      - name: 🔨 Build TypeScript
+        run: bun run build:ts
+      - name: 🎨 Build themes
+        run: bun run build:themes
+      - name: 📦 Package extension
         run: |
           bun add -g @vscode/vsce
           vsce package --no-yarn
       - name: 🎅 Upload Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: dullahan-latest
           path: dullahan-*.vsix
