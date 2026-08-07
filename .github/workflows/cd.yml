@@ -6,9 +6,11 @@ on:
   workflow_dispatch:
 jobs:
   release:
+    environment: marketplace-publish
     permissions:
       contents: write
       pull-requests: write
+      id-token: write
     strategy:
       fail-fast: false
       matrix:
@@ -51,10 +53,13 @@ jobs:
         id: publish-open-vsx
         with:
           pat: ${{ secrets.OPEN_VSX_TOKEN  }}
+      - name: 🔐 Azure Login (OIDC)
+        if: ${{ steps.automated_release.outputs.release_created }}
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          allow-no-subscriptions: true
       - name: 💹 Publish to Visual Studio Marketplace
         if: ${{ steps.automated_release.outputs.release_created }}
-        uses: HaaLeo/publish-vscode-extension@v2
-        with:
-          pat: ${{ secrets.VS_MARKETPLACE_TOKEN  }}
-          registryUrl: https://marketplace.visualstudio.com
-          extensionFile: ${{ steps.publish-open-vsx.outputs.vsixPath }}
+        run: bunx vsce publish --azure-credential --packagePath ${{ steps.publish-open-vsx.outputs.vsixPath }}
