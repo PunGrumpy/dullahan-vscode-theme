@@ -4,6 +4,13 @@ All notable changes to the "dark-dullahan" extension will be documented in this 
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [1.4.0](https://github.com/PunGrumpy/dullahan-vscode-theme/compare/v1.3.0...v1.4.0) (2026-08-07)
+
+
+### Features
+
+* **colors:** retune palette and add role-based color system ([f1174a4](https://github.com/PunGrumpy/dullahan-vscode-theme/commit/f1174a46871643d726ed0ca62c75cacbee67726e))
+
 ## [1.3.0](https://github.com/PunGrumpy/dullahan-vscode-theme/compare/v1.2.4...v1.3.0) (2025-02-28)
 
 
