@@ -4,6 +4,13 @@ All notable changes to the "dark-dullahan" extension will be documented in this 
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [1.4.1](https://github.com/PunGrumpy/dullahan-vscode-theme/compare/v1.4.0...v1.4.1) (2026-08-07)
+
+
+### Bug Fixes
+
+* **ci:** always install deps so lint has node_modules ([#6](https://github.com/PunGrumpy/dullahan-vscode-theme/issues/6)) ([5f0fe47](https://github.com/PunGrumpy/dullahan-vscode-theme/commit/5f0fe47a2b4afb2bded5f3b80e8ca8e4fc4a5fb9))
+
 ## [1.4.0](https://github.com/PunGrumpy/dullahan-vscode-theme/compare/v1.3.0...v1.4.0) (2026-08-07)
 
 
