@@ -6,6 +6,7 @@ on:
   workflow_dispatch:
 jobs:
   release:
+    environment: marketplace-publish
     permissions:
       contents: write
       pull-requests: write
