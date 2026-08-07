@@ -1,12 +1,16 @@
+import { whitePalette as p } from '../palette'
 import { TokenColor } from '@/src/types'
 
+/**
+ * White Dullahan syntax tokens.
+ * Keeps the established Xcode-light scope mapping, now addressed through
+ * {@link whitePalette} roles so the light variant shares one source of truth
+ * with the dark ones.
+ */
 export const whiteTokenColors: TokenColor[] = [
   {
     scope: ['comment', 'punctuation.definition.comment'],
-    settings: {
-      foreground: '#266f6f',
-      fontStyle: 'italic'
-    }
+    settings: { foreground: p.synComment, fontStyle: 'italic' }
   },
   {
     scope: [
@@ -15,21 +19,15 @@ export const whiteTokenColors: TokenColor[] = [
       'punctuation.support.type.property-name.begin.json',
       'punctuation.support.type.property-name.end.json'
     ],
-    settings: {
-      foreground: '#D12F1B'
-    }
+    settings: { foreground: p.synString }
   },
   {
     scope: ['constant.numeric'],
-    settings: {
-      foreground: '#272AD8'
-    }
+    settings: { foreground: p.synConstant }
   },
   {
     scope: ['constant.other.placeholder', 'constant.character.escape'],
-    settings: {
-      foreground: '#000000'
-    }
+    settings: { foreground: p.synPunctuation }
   },
   {
     scope: [
@@ -41,23 +39,15 @@ export const whiteTokenColors: TokenColor[] = [
       'variable.language',
       'constant.language'
     ],
-    settings: {
-      foreground: '#AD3DA4',
-      fontStyle: 'bold'
-    }
+    settings: { foreground: p.synKeyword, fontStyle: 'bold' }
   },
   {
     scope: ['keyword.control.directive', 'punctuation.definition.directive'],
-    settings: {
-      foreground: '#78492A',
-      fontStyle: ''
-    }
+    settings: { foreground: p.warning, fontStyle: '' }
   },
   {
     scope: ['variable.parameter'],
-    settings: {
-      foreground: '#057CB0'
-    }
+    settings: { foreground: p.synVariable }
   },
   {
     scope: [
@@ -65,9 +55,7 @@ export const whiteTokenColors: TokenColor[] = [
       'entity.other.inherited-class',
       'storage.type.haskell'
     ],
-    settings: {
-      foreground: '#23575C'
-    }
+    settings: { foreground: p.synProperty }
   },
   {
     scope: [
@@ -80,22 +68,15 @@ export const whiteTokenColors: TokenColor[] = [
       'storage.type.error.go',
       'storage.type.rune.go'
     ],
-    settings: {
-      foreground: '#4B21B0',
-      fontStyle: ''
-    }
+    settings: { foreground: p.conflict, fontStyle: '' }
   },
   {
     scope: ['entity.name.function', 'support.function'],
-    settings: {
-      foreground: '#3E8087'
-    }
+    settings: { foreground: p.synFunction }
   },
   {
     scope: ['support.function.builtin'],
-    settings: {
-      foreground: '#8854d3'
-    }
+    settings: { foreground: p.diffRemoved }
   },
   {
     scope: [
@@ -103,15 +84,11 @@ export const whiteTokenColors: TokenColor[] = [
       'variable.other.object.property',
       'entity.name.variable.field'
     ],
-    settings: {
-      foreground: '#3E8087'
-    }
+    settings: { foreground: p.synFunction }
   },
   {
     scope: ['entity.name.tag'],
-    settings: {
-      foreground: '#4B21B0'
-    }
+    settings: { foreground: p.conflict }
   },
   {
     scope: [
@@ -119,8 +96,10 @@ export const whiteTokenColors: TokenColor[] = [
       'support.type.property-name.css',
       'support.type.property-name.media.css'
     ],
-    settings: {
-      foreground: '#8854d3'
-    }
+    settings: { foreground: p.diffRemoved }
+  },
+  {
+    scope: ['invalid', 'invalid.illegal'],
+    settings: { foreground: p.error }
   }
 ]
